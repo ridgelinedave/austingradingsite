@@ -1,0 +1,28 @@
+# .gitignore — Austin Grading & Land Management site repo.
+# Matched paths are NEVER tracked, pushed, or deployed. Comments must be
+# on their own line (git has no inline comments).
+
+# --- PRIVATE material (never leaves the machine) ---
+# client/agency source assets, logos, photos:
+/assets/
+# internal retainer / strategy docs:
+/retainer/
+
+# --- BACKUPS (frozen rollback zips — never delete, never commit) ---
+/website-deploys/
+
+# --- Regenerable junk ---
+node_modules/
+.impeccable/
+
+# --- Tooling that lives INSIDE the served site/ folder ---
+# Kept locally, excluded so Cloudflare's site/ output serves ONLY website files.
+/site/README-DEPLOY.md
+/site/netlify.toml
+/site/serve.ps1
+
+# --- OS / editor clutter ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

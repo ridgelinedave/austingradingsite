@@ -1,0 +1,23 @@
+# Austin Grading & Land Management — Cloudflare Pages headers.
+# Ported from netlify.toml during the Netlify -> Cloudflare migration. Cloudflare Pages
+# reads this _headers file natively (same syntax as Netlify). netlify.toml is left in the
+# repo but is inert on Cloudflare.
+#
+# CSP allows GA4 without opening inline-script XSS: the one inline <script> is the gtag
+# config block, authorized by SHA-256 hash (NOT 'unsafe-inline'). If that inline GA block
+# is edited by even one character, recompute the hash or analytics die silently.
+# form-action + connect-src also allow https://api.web3forms.com (the static form backend).
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-d9FZE3UoOxTKClo7lx1cO1CCfy3YLld3wCcn/02JDpU=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://www.google.com; connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'
+
+# Filenames aren't content-hashed, so CSS/JS/images must revalidate or a deploy won't
+# take effect for returning visitors. ETags make this a cheap 304.
+/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+/images/*
+  Cache-Control: public, max-age=0, must-revalidate

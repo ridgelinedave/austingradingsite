@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO (deploy): confirm primary domain is aglmnc.com (master §13). If austingradingnc.com stays primary, swap the host below and 301 the other to it. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.aglmnc.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.aglmnc.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.aglmnc.com/excavation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/land-clearing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/grading</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/drainage</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/driveways</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/septic</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/commercial</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.aglmnc.com/projects</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aglmnc.com/about</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.aglmnc.com/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+</urlset>
