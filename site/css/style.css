@@ -525,3 +525,15 @@ strong{font-weight:600;color:#fff}
 .social a:hover{background:var(--accent);color:#1A1A1A;border-color:var(--accent)}
 .social svg{width:18px;height:18px}
 .contact-aside .social a{color:var(--text-light)}
+
+/* ---------- 34. Skip link (keyboard a11y) ---------- */
+.skip-link{
+  position:absolute;left:8px;top:-60px;z-index:2000;
+  background:var(--accent);color:#1A1A1A;
+  font-family:'Oswald',Impact,sans-serif;text-transform:uppercase;
+  font-weight:600;letter-spacing:.02em;font-size:.95rem;
+  padding:.65rem 1.1rem;border-radius:var(--radius);
+  transition:top .15s ease;
+}
+.skip-link:focus{top:8px;outline:2px solid #fff;outline-offset:2px}
+main:focus{outline:none}

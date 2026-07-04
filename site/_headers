@@ -1,7 +1,7 @@
 # Austin Grading & Land Management — Cloudflare Pages headers.
-# Ported from netlify.toml during the Netlify -> Cloudflare migration. Cloudflare Pages
-# reads this _headers file natively (same syntax as Netlify). netlify.toml is left in the
-# repo but is inert on Cloudflare.
+# Ported from the old netlify.toml during the Netlify -> Cloudflare migration. Cloudflare
+# Pages reads this _headers file natively (same syntax as Netlify). The inert netlify.toml
+# was removed on 2026-07-03 so the served folder stays website-only (web-developer.md §3.9).
 #
 # CSP allows GA4 without opening inline-script XSS: the one inline <script> is the gtag
 # config block, authorized by SHA-256 hash (NOT 'unsafe-inline'). If that inline GA block
