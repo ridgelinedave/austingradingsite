@@ -1,6 +1,6 @@
 # AGLM Location Pages — Recommendation Spec (for David's approval)
 
-**Status:** RECOMMENDATION ONLY. Not built. Approve to schedule as a separate build.
+**Status:** ✅ BUILT & DEPLOYED 2026-07-03 (hub + all 9 towns). See `AGLM-BUILD-NOTES.md` for the compliance report. This file is retained as the original recommendation.
 **Why:** AGLM has strong service pages but **no place-based pages**. Per-town location pages are the highest-leverage remaining local-SEO move (master §7: "county/town mentions worked naturally into copy"; competitor Mountain Folk ranks partly on dedicated pages). This lets AGLM rank for "excavation/grading contractor [town] NC" across the service area, not just Burnsville.
 
 > Anti-anchoring guardrail (web-developer.md §5.1a): build these **from the facts + principles below**, authored fresh. Do **not** mirror another Ridgeline build. Each page must be genuinely unique — Google penalizes doorway/thin-duplicate location pages, which is the main risk here.

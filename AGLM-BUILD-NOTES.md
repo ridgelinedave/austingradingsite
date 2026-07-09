@@ -86,3 +86,25 @@ system), so the multi-agent /code-review was scoped to that automated + browser 
 - Backup snapshot added: `website-deploys/AGLM-website_2026-07-03_2358.zip` (existing zips
   untouched — add-only).
 - Deploy = git push to `main` (Cloudflare Pages auto-publishes).
+
+---
+
+## NAP name → "and" (SEO/citation consistency) — 2026-07-03
+Reverted the business name from "Austin Grading & Land Management" to **"Austin Grading and Land Management"** everywhere it is a NAP/brand name string, to match GBP and all other citations/profiles (they use "and", not "&"). NAP consistency is a local-SEO ranking factor, so the site name must match the citations exactly.
+
+- **227 replacements across all 24 pages:** JSON-LD `name` + `legalName` (20 fields, literal ampersand → "and"), visible nav/footer wordmark (46), and flat HTML (161: `<title>`, meta description, `og:site_name`/`og:title`, footer legal line, contact `<address>`, img `alt`, brand `aria-label`).
+- **Left untouched:** ordinary ampersands in headings/titles (e.g. "Excavation & Grading", "Drainage & Stormwater") — those are not the business name.
+- **Verified:** every JSON-LD block still parses; `name` = `legalName` = "Austin Grading and Land Management LLC" on all schema pages; no stray `&` in any business-name string; footer, contact address, wordmark, alt, aria, og, and titles all read "and". Address/phone/email unchanged (5464 Prices Creek Road, Burnsville NC 28714 · (828) 284-6182 · matthew@aglmnc.com). Pre-push gate clean: no placeholders, 0 em-dashes, 24 unique titles.
+- **GA4 intact:** the name edits did not touch the inline gtag block, so its SHA-256 hash in `site/_headers` is unchanged and still valid (analytics unaffected).
+- **Deploy:** ready for `git push` to `main` (Cloudflare auto-publishes). No zips built or deleted this pass — deploy is git; `website-deploys/` backups left untouched.
+
+---
+
+## SEO + accessibility tidy-up pass — 2026-07-03
+- **Service-area business — street address hidden site-wide.** Removed "5464 Prices Creek Road" from all 22 footers, the contact aside, and 20 JSON-LD `address` blocks (kept locality/region/postal Burnsville, NC 28714). Softened "Prices Creek Road" prose on the Burnsville page + locations hub to "in Burnsville". Contact aside "Location" → "Based In" with a service-area note.
+- **Contact map.** Added a self-contained inline-SVG service-area coverage map (Burnsville home base + 8 towns + ~2hr rings + 6-county caption) — no iframe, no third party, no address pin, CSP-safe. New CSS section 34.
+- **JSON-LD.** Added `geo` (Burnsville town coords 35.9176,-82.2934) and `openingHoursSpecification` (Mo–Fr 07:00–17:00) to all 20 GeneralContractor blocks; name+legalName already "and"; all 36 JSON-LD blocks parse. Visible contact Hours updated to "Mon–Fri 7:00 AM–5:00 PM" to match. ⚠️ hours assumed (7–5 daytime) — confirm with Matthew.
+- **Performance.** Generated resized WebP (long edge ≤1600, q80) for 40 JPEGs; swapped 142 relative on-page refs (img src, hero backgrounds, preload) to WebP where smaller (aglm4 kept JPG — WebP was larger); og:image/JSON-LD image left as JPG for social compatibility. Added width/height to 102 content images (CLS); lazy-loading already present. Originals kept on disk.
+- **Sitemap.** Removed stale TODO comment; all 22 indexable pages (9 towns + hub + services) present, clean URLs; 404/thank-you correctly excluded.
+- **Verified (Chromium):** coverage map renders, WebP images load, width/height present, single h1 + logical headings, mobile nav opens/closes, no horizontal overflow, no console errors, GA hash still valid, all image refs resolve. Titles (24) + metas unique; skip-link + :focus-visible present; form fields labeled. **No test/E2E harness in repo** (static, no build); **WebKit/iOS is the residual real-device check** (preview is Chromium-only).
+- **Deploy:** git push to main (Cloudflare auto-publishes). Zips untouched.

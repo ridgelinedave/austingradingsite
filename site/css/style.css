@@ -537,3 +537,13 @@ strong{font-weight:600;color:#fff}
 }
 .skip-link:focus{top:8px;outline:2px solid #fff;outline-offset:2px}
 main:focus{outline:none}
+
+/* ---------- 34. Service-area coverage map (contact) ---------- */
+.coverage{max-width:820px;margin:0 auto}
+.coverage-map{width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:var(--radius)}
+.coverage-legend{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem;font-size:.85rem;color:var(--muted)}
+.coverage-legend span{display:inline-flex;align-items:center;gap:.45rem}
+.coverage-legend i{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+.coverage-caption{color:var(--muted);font-size:.9rem;text-align:center;margin-top:1rem}
+.coverage-caption a{color:var(--accent);font-weight:600}
+.coverage-caption a:hover{color:var(--accent-hover)}
